@@ -33,5 +33,5 @@ To run on Linux or MacOS
 
 ## Author
 
-- [@Dilmuhammad](https://www.github.com/dilmuhammad06)
+- [@Dilmuhammad06](https://www.github.com/dilmuhammad06)
 
