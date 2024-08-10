@@ -3,13 +3,15 @@
 {% load static %}
 {% block content %}
 
+
+
 <div class="main-wrapper">
 
     {% include 'navbar.html' %}
 
         <!-- main content -->
         <div class="main-content right-chat-active">
-            
+
             <div class="middle-sidebar-bottom">
                 <div class="middle-sidebar-left">
                     <!-- loader wrapper -->
@@ -57,9 +59,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    
-                                    
+
+
+
                                     <div class="item">
                                         <div data-bs-toggle="modal" data-bs-target="#Modalstory" class="card w125 h200 d-block border-0 shadow-xss rounded-xxxl bg-gradiant-bottom overflow-hidden cursor-pointer mb-3 mt-3" style="background-image: url({{user.profile_image.url}});">
                                             <div class="card-body d-block p-3 w-100 position-absolute bottom-0 text-center">
@@ -70,12 +72,12 @@
                                                 </a>
                                             </div>
                                         </div>
-                                    </div>  
-                                    
+                                    </div>
+
 
                                 </div>
                             </div>
-                           
+
 
 
                             <div class="card w-100 shadow-xss rounded-xxl border-0 ps-4 pt-4 pe-4 pb-3 mb-3">
@@ -145,19 +147,8 @@
                                     <p class="fw-500 text-grey-500 lh-26 font-xssss w-100">{{content.text}} <a href="#" class="fw-600 text-primary ms-2">See more</a></p>
                                 </div>
                                 <div class="card-body d-flex p-0">
-                                    <a href="#" class="emoji-bttn d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss me-2"><i class="feather-thumbs-up text-white bg-primary-gradiant me-1 btn-round-xs font-xss"></i> <i class="feather-heart text-white bg-red-gradiant me-2 btn-round-xs font-xss"></i>2.8K Like</a>
-                                    <div class="emoji-wrap">
-                                        <ul class="emojis list-inline mb-0">
-                                            <li class="emoji list-inline-item"><i class="em em---1"></i> </li>
-                                            <li class="emoji list-inline-item"><i class="em em-angry"></i></li>
-                                            <li class="emoji list-inline-item"><i class="em em-anguished"></i> </li>
-                                            <li class="emoji list-inline-item"><i class="em em-astonished"></i> </li>
-                                            <li class="emoji list-inline-item"><i class="em em-blush"></i></li>
-                                            <li class="emoji list-inline-item"><i class="em em-clap"></i></li>
-                                            <li class="emoji list-inline-item"><i class="em em-cry"></i></li>
-                                            <li class="emoji list-inline-item"><i class="em em-full_moon_with_face"></i></li>
-                                        </ul>
-                                    </div>
+                                    <a href="" class="emoji-bttn d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss me-2"> <button onclick="like({{content.id}})" class="feather-heart text-white bg-red-gradiant me-2 btn-round-xs font-xss"></button>{{ content.like_count }} Like</a>
+
                                     <a href="#" class="d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"><i class="feather-message-circle text-dark text-grey-900 btn-round-sm font-lg"></i><span class="d-none-xss">22 Comment</span></a>
                                     <a href="#" id="dropdownMenu31" data-bs-toggle="dropdown" aria-expanded="false" class="ms-auto d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"><i class="feather-share-2 text-grey-900 text-dark btn-round-sm font-lg"></i><span class="d-none-xs">Share</span></a>
                                     <div class="dropdown-menu dropdown-menu-end p-4 rounded-xxl border-0 shadow-lg" aria-labelledby="dropdownMenu31">
@@ -218,7 +209,7 @@
                                         </div>
                                     </div>
 
-                                    
+
                                 </div>
                             </div>
 
@@ -337,7 +328,7 @@
                                 </div>
                             </div>
 
-                            
+
 
                             <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-3">
                                 <div class="card-body p-0 d-flex">
@@ -385,7 +376,7 @@
                                 </div>
                                 <div class="card-body d-block p-0 mb-3">
                                     <div class="row ps-2 pe-2">
-                                        <div class="col-sm-12 p-1"><a href="images/t-30.jpg" data-lightbox="roadtr"><img src="images/t-31.jpg" class="rounded-3 w-100" alt="image"></a></div>                                        
+                                        <div class="col-sm-12 p-1"><a href="images/t-30.jpg" data-lightbox="roadtr"><img src="images/t-31.jpg" class="rounded-3 w-100" alt="image"></a></div>
                                     </div>
                                 </div>
                                 <div class="card-body d-flex p-0">
@@ -406,7 +397,7 @@
                                     <a href="#" class="ms-auto d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"><i class="feather-share-2 text-grey-900 text-dark btn-round-sm font-lg"></i><span class="d-none-xs">Share</span></a>
                                 </div>
                             </div>
- 
+
 
                             <div class="card w-100 text-center shadow-xss rounded-xxl border-0 p-4 mb-3 mt-3">
                                 <div class="snippet mt-2 ms-auto me-auto" data-title=".dot-typing">
@@ -417,7 +408,7 @@
                             </div>
 
 
-                        </div>               
+                        </div>
                         <div class="col-xl-4 col-xxl-3 col-lg-4 ps-lg-0">
                             <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3">
                                 <div class="card-body d-flex align-items-center p-4">
@@ -472,7 +463,7 @@
                                     <h4 class="fw-700 text-grey-900 font-xssss mt-2">Hugury Daugloi <span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">12 mutual friends</span></h4>
                                     <a href="#" class="btn-round-sm bg-white text-grey-900 feather-plus font-xss ms-auto mt-2"></a>
                                 </div>
-                                
+
                             </div>
 
                             <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3 mt-3">
@@ -495,7 +486,7 @@
                                 </div>
 
 
-                                 
+
                             </div>
 
                             <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3">
@@ -517,7 +508,7 @@
                                     <a href="#" class="p-2 lh-28 w-100 bg-grey text-grey-800 text-center font-xssss fw-700 rounded-xl"><i class="feather-external-link font-xss me-2"></i> Like Page</a>
                                 </div>
 
-                                 
+
                             </div>
 
 
@@ -540,14 +531,14 @@
                                     <div class="bg-primary me-2 p-3 rounded-xxl"><h4 class="fw-700 font-lg ls-3 lh-1 text-white mb-0"><span class="ls-1 d-block font-xsss text-white fw-600">APR</span>23</h4></div>
                                     <h4 class="fw-700 text-grey-900 font-xssss mt-2">Aniversary Event <span class="d-block font-xsssss fw-500 mt-1 lh-4 text-grey-500">41 madison ave, floor 24 new work, NY 10010</span> </h4>
                                 </div>
-                                 
+
                             </div>
                         </div>
 
                     </div>
                 </div>
-                
-            </div>            
+
+            </div>
         </div>
         <!-- main content -->
 
@@ -659,14 +650,14 @@
                             </h3>
                             <span class="bg-success ms-auto btn-round-xss"></span>
                         </li>
-                        
+
                     </ul>
                 </div>
                 <div class="section full pe-3 ps-4 pt-4 pb-4 position-relative feed-body">
                     <h4 class="font-xsssss text-grey-500 text-uppercase fw-700 ls-3">GROUPS</h4>
                     <ul class="list-group list-group-flush">
                         <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
-                            
+
                             <span class="btn-round-sm bg-primary-gradiant me-3 ls-3 text-white font-xssss fw-700">UD</span>
                             <h3 class="fw-700 mb-0 mt-0">
                                 <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">Studio Express</a>
@@ -674,7 +665,7 @@
                             <span class="badge mt-0 text-grey-500 badge-pill pe-0 font-xsssss">2 min</span>
                         </li>
                         <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
-                            
+
                             <span class="btn-round-sm bg-gold-gradiant me-3 ls-3 text-white font-xssss fw-700">AR</span>
                             <h3 class="fw-700 mb-0 mt-0">
                                 <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">Armany Design</a>
@@ -682,7 +673,7 @@
                             <span class="bg-warning ms-auto btn-round-xss"></span>
                         </li>
                         <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
-                            
+
                             <span class="btn-round-sm bg-mini-gradiant me-3 ls-3 text-white font-xssss fw-700">UD</span>
                             <h3 class="fw-700 mb-0 mt-0">
                                 <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">De fabous</a>
@@ -695,7 +686,7 @@
                     <h4 class="font-xsssss text-grey-500 text-uppercase fw-700 ls-3">Pages</h4>
                     <ul class="list-group list-group-flush">
                         <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
-                            
+
                             <span class="btn-round-sm bg-primary-gradiant me-3 ls-3 text-white font-xssss fw-700">AB</span>
                             <h3 class="fw-700 mb-0 mt-0">
                                 <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">Armany Seary</a>
@@ -703,28 +694,28 @@
                             <span class="bg-success ms-auto btn-round-xss"></span>
                         </li>
                         <li class="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
-                            
+
                             <span class="btn-round-sm bg-gold-gradiant me-3 ls-3 text-white font-xssss fw-700">SD</span>
                             <h3 class="fw-700 mb-0 mt-0">
                                 <a class="font-xssss text-grey-600 d-block text-dark model-popup-chat" href="#">Entropio Inc</a>
                             </h3>
                             <span class="bg-success ms-auto btn-round-xss"></span>
                         </li>
-                        
+
                     </ul>
                 </div>
 
             </div>
         </div>
 
-        
+
         <!-- right chat -->
-        
+
         <div class="app-footer border-0 shadow-lg bg-primary-gradiant">
             <a href="{% url 'home' %}" class="nav-content-bttn nav-center"><i class="feather-home"></i></a>
             <a href="default-video.html" class="nav-content-bttn"><i class="feather-package"></i></a>
-            <a href="default-live-stream.html" class="nav-content-bttn" data-tab="chats"><i class="feather-layout"></i></a>            
-            <a href="default-settings.html" class="nav-content-bttn"><img src="{{user.profile_image.url}}" alt="user" class="w30 shadow-xss"></a>
+            <a href="default-live-stream.html" class="nav-content-bttn" data-tab="chats"><i class="feather-layout"></i></a>
+            <a href="default-settings.html" class="nav-content-bttn"><i class=""feather-settings></i></a>
         </div>
 
         <div class="app-header-search">
@@ -741,7 +732,7 @@
             </form>
         </div>
 
-    </div> 
+    </div>
 
     <div class="modal bottom side fade" id="Modalstory" tabindex="-1" role="dialog" style=" overflow-y: auto;">
          <div class="modal-dialog modal-dialog-centered" role="document">
@@ -754,11 +745,11 @@
                             <div class="item"><img src="images/story-6.jpg" alt="image"></div>
                             <div class="item"><img src="images/story-7.jpg" alt="image"></div>
                             <div class="item"><img src="images/story-8.jpg" alt="image"></div>
-                            
+
                         </div>
                     </div>
                     <div class="form-group mt-3 mb-0 p-3 position-absolute bottom-0 z-index-1 w-100">
-                        <input type="text" class="style2-input w-100 bg-transparent border-light-md p-3 pe-5 font-xssss fw-500 text-white" value="Write Comments">               
+                        <input type="text" class="style2-input w-100 bg-transparent border-light-md p-3 pe-5 font-xssss fw-500 text-white" value="Write Comments">
                         <span class="feather-send text-white font-md text-white position-absolute" style="bottom: 35px;right:30px;"></span>
                     </div>
                 </div>
@@ -790,12 +781,24 @@
                     <div class="form-group icon-right-input style1-input mb-0"><input type="text" placeholder="Start typing.." class="form-control rounded-xl bg-greylight border-0 font-xssss fw-500 ps-3"><i class="feather-send text-grey-500 font-md"></i></div>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 
     <script src="{% static 'js/plugin.js' %}"></script>
 
     <script src="{% static 'js/lightbox.js' %}"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
+
+    <script>
+        // Define the URL pattern with placeholders
+        const likeUrlPattern = "{% url 'weblike' 0 %}";
+
+        function like(content_id) {
+            // Replace placeholders with actual values
+            const url = likeUrlPattern
+                .replace('0', content_id);
+            window.location.href = url;
+        }
+    </script>
 
 {% endblock content %}
