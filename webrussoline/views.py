@@ -7,38 +7,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from russoline.models import Content, Like
 from django.contrib.auth.decorators import login_required
 
-class IndexView(View):
-    def get(self,request):
-        form = ContentUploadForm()
-        contents = Content.objects.all().order_by("-created_at")
-        return render(request,'default.html',{"contents":contents,"form":form})
-
-    def post(self,request):
-        contents = Content.objects.all().order_by("-created_at")
-        form = ContentUploadForm(request.POST, request.FILES)
-        if form.is_valid():
-            new_form = form.save(commit=False)
-            new_form.user = request.user
-            new_form.save()
-
-            return redirect('home')
-        return render(request,'default.html',{"contents":contents,"form":form})
-
-class ProfileView(LoginRequiredMixin,View):
-    def get(self,request):
-        return render(request,'profile.html')
-
-class MessageView(LoginRequiredMixin,View):
-    def get(self,request):
-        return render(request,'message.html')
-
-class NotificationView(LoginRequiredMixin,View):
-    def get(self,request):
-        return render(request,'notification.html')
-
-class ExploreView(View):
-    def get(self,request):
-        return render(request,'explore.html')
+#Auth
 
 class LoginView(View):
     def get(self,request):
@@ -75,6 +44,43 @@ class RegisterView(View):
             login(request,user)
             return redirect('home')
         return render(request,'register.html',{"form":form})
+    
+#Views
+
+class IndexView(View):
+    def get(self,request):
+        form = ContentUploadForm()
+        contents = Content.objects.all().order_by("-created_at")
+        return render(request,'index.html',{"contents":contents,"form":form})
+
+    def post(self,request):
+        contents = Content.objects.all().order_by("-created_at")
+        form = ContentUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            new_form = form.save(commit=False)
+            new_form.user = request.user
+            new_form.save()
+
+            return redirect('home')
+        return render(request,'index.html',{"contents":contents,"form":form})
+
+class ProfileView(LoginRequiredMixin,View):
+    def get(self,request):
+        return render(request,'profile.html')
+
+class MessageView(LoginRequiredMixin,View):
+    def get(self,request):
+        return render(request,'message.html')
+
+class NotificationView(LoginRequiredMixin,View):
+    def get(self,request):
+        return render(request,'notification.html')
+
+class StoriesView(View):
+    def get(self,request):
+        return render(request, 'stories.html')
+    
+#Actions
 
 @login_required
 def like(request,content_id):
@@ -83,13 +89,13 @@ def like(request,content_id):
 
     existing_like = Like.objects.filter(user=user.id, content=content).exists()
 
-    if not existing_like:
+    if not existing_like and user == request.user:
         Like.objects.create(
         user = user,
         content = content
         )
         return redirect("home")
     else:
-        liked = Like.objects.filter(user=user.id, content=content).delete()
+        Like.objects.filter(user=user.id, content=content).delete()
 
     return redirect("home")

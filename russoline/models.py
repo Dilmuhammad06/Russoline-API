@@ -9,7 +9,7 @@ class Follow(models.Model):
         return f'{self.follower} subscribed to {self.channel}'
 
 class Content(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='contents')
     text = models.TextField()
     video = models.FileField(upload_to='videos/contents/',null=True,blank=True)
     image = models.ImageField(upload_to='images/contents/',null=True,blank=True)
